@@ -1,0 +1,422 @@
+{
+  "name": "CAMT052 XML Generator",
+  "description": "This is test project",
+  "version": "1.0",
+  "groupId": "com.manoj.camt052",
+  "artifactId": "camt052",
+  "javaVersion": "1.8",
+  "scalaVersion": "2.11.8",
+  "scalaCompatVersion": "2.11",
+  "sparkVersion": "2.3.8",
+  "jobDefinition": {
+    "delimiter": ",",
+    "source": {
+      "path": "/User/manojpawar94/inbound",
+      "fileType": "CSV",
+      "filePattern": "test_camt052_{timestamp(yyyyMMdd)}.dat"
+    },
+    "destination": {
+      "path": "/User/manojpawar94/outboundPath",
+      "fileType": "XML",
+      "filePattern": "output_camt052_{timestamp(yyyyMMdd)}.dat"
+    },
+    "jobSchema": {
+      "name": "Document",
+      "description": "",
+      "type": "RootNode",
+      "csv": {
+        "fieldIndex": "-1"
+      },
+      "attributes": [
+        {
+          "name": "xmlns",
+          "defaultValue": "urn:iso:std:iso:20022:tech:xsd:camt.052.001.02"
+        }
+      ],
+      "nodes": [
+        {
+          "name": "BkToCstmrAcctRpt",
+          "description": "",
+          "type": "Node",
+          "csv": {
+            "fieldIndex": "-1"
+          },
+          "attributes": [],
+          "nodes": [
+            {
+              "name": "GrpHdr",
+              "description": "",
+              "type": "Node",
+              "csv": {
+                "fieldIndex": "-1"
+              },
+              "attributes": [],
+              "nodes": [
+                {
+                  "name": "MsgId",
+                  "description": "",
+                  "type": "Element",
+                  "csv": {
+                    "fieldIndex": "0"
+                  },
+                  "attributes": [],
+                  "nodes": []
+                },
+                {
+                  "name": "CreDtTm",
+                  "description": "",
+                  "type": "Element",
+                  "csv": {
+                    "fieldIndex": "1"
+                  },
+                  "attributes": [],
+                  "nodes": []
+                },
+                {
+                  "name": "AddtlInf",
+                  "description": "",
+                  "type": "Element",
+                  "csv": {
+                    "fieldIndex": "2"
+                  },
+                  "attributes": [],
+                  "nodes": []
+                }
+              ]
+            },
+            {
+              "name": "Rpt",
+              "description": "",
+              "type": "MultiNode",
+              "csv": {
+                "fieldIndex": "4",
+                "delimiter": "~"
+              },
+              "attributes": [],
+              "nodes": [
+                {
+                  "name": "Id",
+                  "description": "",
+                  "type": "Element",
+                  "csv": {
+                    "fieldIndex": 4,
+                    "subFieldIndex": 0
+                  },
+                  "attributes": [],
+                  "nodes": []
+                },
+                {
+                  "name": "ElctrncSeqNb",
+                  "description": "",
+                  "type": "Element",
+                  "csv": {
+                    "fieldIndex": 4,
+                    "subFieldIndex": 1
+                  },
+                  "attributes": [],
+                  "nodes": []
+                },
+                {
+                  "name": "LglSeqNb",
+                  "description": "",
+                  "type": "Element",
+                  "csv": {
+                    "fieldIndex": 4,
+                    "subFieldIndex": 2
+                  },
+                  "attributes": [],
+                  "nodes": []
+                },
+                {
+                  "name": "CreDtTm",
+                  "description": "",
+                  "type": "Element",
+                  "csv": {
+                    "fieldIndex": 4,
+                    "subFieldIndex": 3
+                  },
+                  "attributes": [],
+                  "nodes": []
+                },
+                {
+                  "name": "FrToDt",
+                  "description": "",
+                  "type": "Node",
+                  "csv": {
+                    "fieldIndex": 4,
+                    "subFieldIndex": 4
+                  },
+                  "attributes": [],
+                  "nodes": [
+                    {
+                      "name": "FrDtTm",
+                      "description": "",
+                      "type": "Element",
+                      "csv": {
+                        "fieldIndex": 4,
+                        "subFieldIndex": 5
+                      },
+                      "attributes": [],
+                      "nodes": [
+                        {}
+                      ]
+                    },
+                    {
+                      "name": "ToDtTm",
+                      "description": "",
+                      "type": "Element",
+                      "csv": {
+                        "fieldIndex": 4,
+                        "subFieldIndex": 6
+                      },
+                      "attributes": [],
+                      "nodes": []
+                    }
+                  ]
+                },
+                {
+                  "name": "Acct",
+                  "description": "",
+                  "type": "Node",
+                  "csv": {
+                    "fieldIndex": 4,
+                    "subFieldIndex": -1
+                  },
+                  "attributes": [],
+                  "nodes": [
+                    {
+                      "name": "Id",
+                      "description": "",
+                      "type": "Node",
+                      "csv": {
+                        "fieldIndex": 4,
+                        "subFieldIndex": -1
+                      },
+                      "attributes": [],
+                      "nodes": [
+                        {
+                          "name": "Othr",
+                          "description": "",
+                          "type": "Node",
+                          "csv": {
+                            "fieldIndex": 4,
+                            "subFieldIndex": -1
+                          },
+                          "attributes": [],
+                          "nodes": [
+                            {
+                              "name": "Id",
+                              "description": "",
+                              "type": "Element",
+                              "csv": {
+                                "fieldIndex": 4,
+                                "subFieldIndex": 7
+                              },
+                              "attributes": [],
+                              "nodes": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Tp",
+                      "description": "",
+                      "type": "Node",
+                      "csv": {
+                        "fieldIndex": 4,
+                        "subFieldIndex": -1
+                      },
+                      "attributes": [],
+                      "nodes": [
+                        {
+                          "name": "Prtry",
+                          "description": "",
+                          "type": "Element",
+                          "csv": {
+                            "fieldIndex": 4,
+                            "subFieldIndex": 8
+                          },
+                          "attributes": [],
+                          "nodes": []
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Ccy",
+                      "description": "",
+                      "type": "Element",
+                      "csv": {
+                        "fieldIndex": 4,
+                        "subFieldIndex": 9
+                      },
+                      "attributes": [],
+                      "nodes": []
+                    },
+                    {
+                      "name": "Nm",
+                      "description": "",
+                      "type": "Element",
+                      "csv": {
+                        "fieldIndex": 4,
+                        "subFieldIndex": 10
+                      },
+                      "attributes": [],
+                      "nodes": []
+                    },
+                    {
+                      "name": "Svcr",
+                      "description": "",
+                      "type": "Node",
+                      "csv": {
+                        "fieldIndex": 4,
+                        "subFieldIndex": -1
+                      },
+                      "attributes": [],
+                      "nodes": [
+                        {
+                          "name": "FinInstnId",
+                          "description": "",
+                          "type": "Node",
+                          "csv": {
+                            "fieldIndex": 4,
+                            "subFieldIndex": -1
+                          },
+                          "attributes": [],
+                          "nodes": [
+                            {
+                              "name": "BIC",
+                              "description": "",
+                              "type": "Element",
+                              "csv": {
+                                "fieldIndex": 4,
+                                "subFieldIndex": 11
+                              },
+                              "attributes": [],
+                              "nodes": []
+                            },
+                            {
+                              "name": "Nm",
+                              "description": "",
+                              "type": "Element",
+                              "csv": {
+                                "fieldIndex": 4,
+                                "subFieldIndex": 12
+                              },
+                              "attributes": [],
+                              "nodes": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Bal",
+                  "description": "",
+                  "type": "Node",
+                  "csv": {
+                    "fieldIndex": 4,
+                    "subFieldIndex": -1
+                  },
+                  "attributes": [],
+                  "nodes": [
+                    {
+                      "name": "Tp",
+                      "description": "",
+                      "type": "Node",
+                      "csv": {
+                        "fieldIndex": 4,
+                        "subFieldIndex": -1
+                      },
+                      "attributes": [],
+                      "nodes": [
+                        {
+                          "name": "CdOrPrtry",
+                          "description": "",
+                          "type": "Node",
+                          "csv": {
+                            "fieldIndex": 4,
+                            "subFieldIndex": -1
+                          },
+                          "attributes": [],
+                          "nodes": [
+                            {
+                              "name": "Cd",
+                              "description": "",
+                              "type": "Element",
+                              "csv": {
+                                "fieldIndex": 4,
+                                "subFieldIndex": 13
+                              },
+                              "attributes": [],
+                              "nodes": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Amt",
+                      "description": "",
+                      "type": "Node",
+                      "csv": {
+                        "fieldIndex": 4,
+                        "subFieldIndex": -1
+                      },
+                      "attributes": [
+                        {
+                          "name": "Ccy",
+                          "csv": {
+                            "fieldIndex": 4,
+                            "subFieldIndex": 14
+                          }
+                        }
+                      ],
+                      "nodes": []
+                    },
+                    {
+                      "name": "CdtDbtInd",
+                      "description": "",
+                      "type": "Node",
+                      "csv": {
+                        "fieldIndex": 4,
+                        "subFieldIndex": 15
+                      },
+                      "attributes": [],
+                      "nodes": []
+                    },
+                    {
+                      "name": "Dt",
+                      "description": "",
+                      "type": "Node",
+                      "csv": {
+                        "fieldIndex": 4,
+                        "subFieldIndex": -1
+                      },
+                      "attributes": [],
+                      "nodes": [
+                        {
+                          "name": "DtTm",
+                          "description": "",
+                          "type": "Node",
+                          "csv": {
+                            "fieldIndex": 4,
+                            "subFieldIndex": 16
+                          },
+                          "attributes": [],
+                          "nodes": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
